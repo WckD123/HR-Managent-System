@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- CSS (load bootstrap) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./app.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.10/angular-material.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap-year-calendar.min.css">
+    <link rel="stylesheet" href="https://www.bootstrap-year-calendar.com/css/bootstrap-datepicker.min.css" >
+    <link rel="stylesheet" href="https://www.bootstrap-year-calendar.com/css/bootstrap-theme.min.css" >
+    <link rel="stylesheet" href="https://www.bootstrap-year-calendar.com/css/bootstrap-year-calendar.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <style>
+
+    html{
+        min-height : 100%;
+    }
+    body{
+        height : 100%;
+        min-height : 100% !important;
+
+    }
+        .navbar { border-radius:0; }
+    </style>
+
+    <!-- AngularJS Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-messages.min.js"></script>
+    <script src="./moment.js"></script>
+
+    <!-- AngularJS Material Javascript now available via Google CDN; version 1.1.4 used here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.9/angular-material.min.js"></script>
+
+    <!-- JS (load angular, ui-router, and our custom js file) -->
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.13/daterangepicker.min.css" />
+
+
+
+
+    <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <script src="./ng-storage.js"></script>
+    <script src="app.js"></script>
+
+</head>
+
+<!-- apply our angular app to our site -->
+<body ng-app="routerApp" ng-controller="mainController as mc" ng-init="initFunc()" id="modalToast">
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="signedOut">Reflexis Systems Inc.</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="signedIn.attendance" ng-show="LoginModal">Attendance</a></li>
+        <li><a ui-sref="signedIn.leave" ng-show="LoginModal">Leave</a></li>
+        <li><a ui-sref="signedIn.profile.userProfile" ng-show="LoginModal">Profile</a></li>
+
+        <li><a ui-sref="adminSignedIn.employee"  ng-show="LoginModal" ng-if="checkAdmin()">!!!ADMIN PAGE!!!</a></li>
+        <li ng-click="LogoutFunc()"  ng-show="LoginModal"><a>Logout</a></li>
+    </ul>
+</nav>
+
+<!-- MAIN CONTENT -->
+<!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+<div class="container">
+    <div ui-view></div>
+</div>
+
+<!--nav class="navbar fixed-bottom navbar-light" style="background-color: #e3f2fd;">
+    <div class="row line-to-top">
+        <div class="col-md-4 line-to-right"><p>We at Reflexis Systems do not share your data with anyone. Lite lo, thik hai?</p></div>
+        <div class="col-md-4 line-to-right"><p>In case we sell your data, we make a lot of money out of it... You get your salary from there..</p></div>
+        <div class="col-md-4"><p>So, Keep calm and Sell Data!!!! All hail Mark Zuckerburg _/\_ </p></div>
+    </div>
+</nav -->
+<script src="./home/homeController.js"></script>
+<script src="./mainController.js"></script>
+<script src="./admin/adminController.js"></script>
+<script src="./home/leave/leaveController.js"></script>
+<script src="./home/attendance/attendanceController.js"></script>
+<script src="./home/profile/posdep/posdepController.js"></script>
+<script src="./home/profile/profileController.js"></script>
+<script src="./admin/addNewEmployee/addNewEmployee.js"></script>
+<script src="./admin/updateEmployee/updateEmployee.js"></script>
+<script src="https://www.bootstrap-year-calendar.com/js/respond.min.js"></script>
+<script src="https://www.bootstrap-year-calendar.com/js/bootstrap-datepicker.min.js"></script>
+<script src="https://www.bootstrap-year-calendar.com/js/bootstrap-popover.js"></script>
+<script src="https://www.bootstrap-year-calendar.com/js/scripts.js"></script>
+
+</body>
+
+
+
+
+
+</html>

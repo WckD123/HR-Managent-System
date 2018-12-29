@@ -1,0 +1,59 @@
+<section layout="row" flex>
+    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="$mdMedia('gt-md')"
+        md-whiteframe="4">
+
+      <md-toolbar class="makeThisBlack">
+        <h1 class="md-toolbar-tools">Employee Menu</h1>
+      </md-toolbar>
+
+        <md-content>
+            <md-list>
+                  <md-list-item class="md-3-line">
+                      <img ng-src="../../assets/images/user2.png" class="md-avatar cursorHover" alt="{{item.who}}">
+                        <div ui-sref=".userProfile" class="md-list-item-text cursorHover">
+                          <h3>Profile</h3>
+                        </div>
+
+                        <md-divider md-inset ng-if="!$last"></md-divider>
+                  </md-list-item>
+                  <md-list-item class="md-3-line">
+                        <img ng-src="../../assets/images/files.png" class="md-avatar cursorHover" alt="{{item.who}}">
+                        <div ui-sref=".posdep" class="md-list-item-text cursorHover">
+                          <h3>Position & Department History</h3>
+                      </div>
+                        <md-divider md-inset ng-if="!$last"></md-divider>
+                  </md-list-item>
+                  <md-list-item class="md-3-line">
+                        <img ng-src="../../assets/images/money-bag.png" class="md-avatar cursorHover" alt="{{item.who}}">
+                        <div ui-sref=".salaryPaid" class="md-list-item-text cursorHover">
+                          <h3>Salary Paid History</h3>
+                        </div>
+                        <md-divider md-inset ng-if="!$last"></md-divider>
+                  </md-list-item>
+            </md-list>
+        </md-content>
+    </md-sidenav>
+
+    <md-content flex layout-padding>
+
+      <div layout="column" layout-align="top center">
+
+
+        <div>
+          <md-button ng-click="toggleLeft()"
+            class="md-primary" hide-gt-md>
+            Open Employee Menu
+          </md-button>
+        </div>
+    </div>
+
+      <div ui-view></div>
+
+    </md-content>
+
+
+
+</section>

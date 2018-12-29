@@ -1,0 +1,88 @@
+<div class="row">
+    <div class="col-xs-12 col-md-8">
+            <div class="panel panel-default">
+              <!-- Default panel contents -->
+              <div class="panel-heading"><center><h3>Recent Company News</h3></center></div>
+
+              <!-- Table -->
+              <table class="table">
+                <tr ng-repeat="news in newsList"><td>{{news.data}}</td></tr>
+              </table>
+            </div>
+    </div>
+    <div class="col-xs-12 col-md-4 float-in-middle">
+
+                      <form name="myForm">
+                        <div class="login-container">
+                          <div class="row" ng-show="!LoginModal">
+                              <div class="col-md-12">
+                                  <hr>
+                                  <center><h3>Employee Login</h3></center>
+                                  <hr>
+                              </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" name="email" ng-model="user.username" ng-value="emailInput" required class="form-control">
+                                <div ng-show="myForm.email.$error.email" class="error">Invalid email!</div>
+                                <div ng-show="myForm.email.$error.required &amp;&amp; myForm.email.$touched" class="error">Required!</div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" name="pass" ng-model="user.password" ng-value="passwordInput" required class="form-control">
+                                <div ng-show="myForm.pass.$error.required &amp;&amp; myForm.pass.$touched" class="error">Required!</div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <center>
+                                      <button ng-click="authFunc()" ng-disabled="myForm.$invalid" class="btn btn-success btn-lg">Login</button>
+                                </center>
+                                <div class="clearfix"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div ng-show="showError" class="alert alert-danger">Wrong credentials!</div>
+                              <div ng-show="showUserError" class="alert alert-danger">User Does Not Exist!</div>
+                              <div ng-show="showSuccess" class="alert alert-success">Attendance Has been Marked!</div>
+                            </div>
+                          </div>
+                        </div><br><br>
+                      </form>
+
+    </div>
+
+
+    <div class="row">
+    <div class="col-md-8 col-xs-12">
+            <div class="col-md-12 col-xs-12 row-striped" ng-repeat="event in events">
+                <div class="row">
+                    <div class="col-md-2 text-right">
+                        <h1 class="display-4"><span class="badge badge-secondary">{{event.date}}</span></h1>
+                        <h4>{{event.month}}</h4>
+                    </div>
+                    <div class="col-md-10">
+                        <h4 class="text-uppercase"><strong>{{event.reason}}</strong></h4>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{event.day}}</li>
+                            <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> {{event.type}}</li>
+                            <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Reflexis</li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-xs-12">
+        <div class="row">
+            <h3><center>Reflexis Systems, the happiest workplace EVER!</center></h3>
+        </div>
+        <div class="row">
+            <img class="img-responsive" src="./assets/images/reflexisPeople.jpg"></img>
+        </div>
+    </div>
+</div>
+</div>

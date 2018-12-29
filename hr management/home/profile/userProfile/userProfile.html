@@ -1,0 +1,62 @@
+<center><h1>User Profile</h1>
+
+    <div>
+      <md-card md-theme="{{ showDarkTheme ? 'dark-orange' : 'default' }}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Hello {{userName}}, here is your basic info!</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content layout="row" layout-align="space-between">
+            <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Information</th>
+                      <th scope="col">Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Full Name</th>
+                      <td>{{empData.full_name}}</td>
+                    </tr>
+                    <tr>
+                      <th>Email ID</th>
+                      <td>{{empData.email_id}}</td>
+                    </tr>
+                    <tr>
+                      <th>Qualification</th>
+                      <td>{{empData.qualification}}</td>
+                    </tr>
+                    <tr>
+                      <th>Adress</th>
+                      <td>{{empData.address}}</td>
+                    </tr>
+                    <tr>
+                      <th>Mobile</th>
+                      <td>{{empData.mobile}}</td>
+                    </tr>
+                    <tr>
+                      <th>Pan No.</th>
+                      <td>{{empData.pan_no}}</td>
+                    </tr>
+                    <tr>
+                      <th>Aadhar No.</th>
+                      <td>{{empData.aadhar_no}}</td>
+                    </tr>
+                    <tr>
+                      <th>Marital Status</th>
+                      <td>{{empData.marital_status}}</td>
+                    </tr>
+                    <tr>
+                      <th>Joining Date</th>
+                      <td>{{empData.joining_date}}</td>
+                    </tr>
+
+                  </tbody>
+              </table>
+        </md-card-content>
+      </md-card>
+    </div>
+
+</center>

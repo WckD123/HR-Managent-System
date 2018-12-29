@@ -1,0 +1,42 @@
+
+
+<div class="col-md-10 col-md-offset-1 col-xs-12"><center>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item" ng-repeat="data in employeePaginationData">
+            <a class="page-link" value="0" ng-click="selectNewPage(data.value)">{{data.value +1}}</a>
+        </li>
+
+      </ul>
+  </nav></center>
+    <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Qualification</th>
+              <th scope="col">Address</th>
+              <th scope="col">Mobile No.</th>
+              <th scope="col">Pan No.</th>
+              <th scope="col">Aadhar No.</th>
+              <th scope="col">Marital Status</th>
+              <th scope="col">Joining Date</th>
+              <th scope="col">Email ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="emp in allEmployeeData" ng-init="Index = $index+1">
+              <th scope="row">{{Index}}</th>
+              <td>{{emp.full_name}}</td>
+              <td>{{emp.qualification}}</td>
+              <td>{{emp.address}}</td>
+              <td>{{emp.mobile}}</td>
+              <td>{{emp.pan_no}}</td>
+              <td>{{emp.aadhar_no}}</td>
+              <td>{{emp.marital_status}}</td>
+              <td>{{emp.joining_date}}</td>
+              <td>{{emp.email_id}}</td>
+            </tr>
+          </tbody>
+      </table>
+</div>

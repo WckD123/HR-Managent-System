@@ -1,0 +1,18 @@
+<div ng-if="checkAdmin()">
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10 login-container"><center>
+        <a href=""><div class="col-sm-2" ui-sref=".leaves">Leaves</div></a>
+        <a href=""><div class="col-sm-2" ui-sref=".employee">Employee</div></a>
+        <a href=""><div class="col-sm-2" ui-sref=".posdep">Pos and Dep Data</div></a>
+        <a href=""><div class="col-sm-2" ui-sref=".salaryPaid">Salary Paid Data</div></a>
+        <a href=""><div class="col-sm-2" ui-sref=".addNewEmployee">Add New Emp</div></a>
+        <a href=""><div class="col-sm-2" ui-sref=".updateEmployee">Update Employee</div></a>
+    </center>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+<div ui-view></div>
+
+</div>

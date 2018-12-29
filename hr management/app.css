@@ -1,0 +1,141 @@
+.EmployeeListCont{
+    margin-top:30px;
+    border-style: double;
+    border-radius: 5px;
+}
+.Notices{
+    padding:5px;
+}
+.Holidays{
+    padding : 5px;
+}
+.News{
+    padding : 5px;
+}
+.EmpListHeading{
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: double;
+}
+.line-to-right{
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    border-style: groove;
+}
+
+.error{
+  color: tomato;
+  font-size: 12px;
+  padding-top: 4px
+}
+.closeButton{
+    font-size: 14px;
+}
+.style-two {
+    color: black;
+    border: 0;
+    height: 15px;
+    background-image: linear-gradient(to right, rgba(255, 0, 255, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.page-item:hover{
+    cursor: pointer;
+}
+
+.login-container{
+    -webkit-box-shadow: 1px 1px 2px 3px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 1px 2px 3px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         1px 1px 2px 3px #ccc;
+    border-radius: 5px;
+    padding : 10px;
+    vertical-align: middle;
+}
+
+.makeThisBlack{
+    background: #222 !important;
+}
+
+.float-in-middle{
+    vertical-align: middle;
+}
+
+.row-striped:nth-of-type(odd){
+  background-color: #efefef;
+  border-left: 4px #000000 solid;
+}
+
+.row-striped:nth-of-type(even){
+  background-color: #ffffff;
+  border-left: 4px #efefef solid;
+}
+
+.row-striped {
+    padding: 0px;
+}
+/*
+.day{
+        box-shadow: rgb(255,0,0) 0px -4px 0px 0px inset ;
+}
+.day.old{
+        box-shadow: rgb(255,255,255) 0px -4px 0px 0px inset ;
+}
+.day.new{
+        box-shadow: rgb(255,255,255) 0px -4px 0px 0px inset ;
+}
+.day.disabled{
+        box-shadow: rgb(255,255,255) 0px -4px 0px 0px inset ;
+}
+*/
+
+.buttondemoBasicUsage section {
+  background: #f7f7f7;
+  border-radius: 3px;
+  text-align: center;
+  margin: 1em;
+  position: relative !important;
+  padding-bottom: 10px; }
+
+.buttondemoBasicUsage md-content {
+  margin-right: 7px; }
+
+.buttondemoBasicUsage section .md-button {
+  margin-top: 16px;
+  margin-bottom: 16px; }
+
+.buttondemoBasicUsage .label {
+  position: absolute;
+  bottom: 5px;
+  left: 7px;
+  font-size: 14px;
+  opacity: 0.54; }
+
+.datepickerdemoCalendar {
+  /** Demo styles for mdCalendar. */ }
+  .datepickerdemoCalendar label {
+    font-size: x-small; }
+
+.tabsdemoDynamicHeight md-content {
+  background-color: transparent !important; }
+  .tabsdemoDynamicHeight md-content md-tabs {
+    background: #f6f6f6;
+    border: 1px solid #e1e1e1; }
+    .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+      background: white; }
+  .tabsdemoDynamicHeight md-content h1:first-child {
+    margin-top: 0; }
+
+
+
+    .navBardemoBasicUsage md-content .ext-content {
+      padding: 50px;
+      margin: 20px;
+      background-color: #FFF2E0; }
+
+
+.cursorHover:hover{
+    cursor: pointer;
+}

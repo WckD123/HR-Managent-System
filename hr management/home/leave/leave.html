@@ -1,0 +1,59 @@
+<div class="container" class="inset toastdemoBasicUsage" id="toast-container">
+    <div class="col-md-3 col-sm-3 col-xs-0"></div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <ul class="nav nav-tabs">
+              <li role="presentation" class="cursorHover"><a ng-click="OpenViewTab()">View Leave Status</a></li>
+              <li role="presentation" class="cursorHover"><a ng-click="OpenApplyTab()">Apply for Leave</a></li>
+        </ul>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-0"></div>
+</div>
+<br><br>
+<div class="row" ng-if="show">
+
+    <div class="col-md-8 col-md-offset-2 col-xs-12">
+        <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Start Date</th>
+                  <th scope="col">End Date</th>
+                  <th scope="col">Approval Status</th>
+                  <th scope="col">Approval Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="leave in leaveArray" ng-init="Index = $index">
+                  <th scope="row">{{Index}}</th>
+                  <td>{{leave.start_date}}</td>
+                  <td>{{leave.end_date}}</td>
+                  <td>{{leave.status}}</td>
+                  <td>{{leave.approved_date}}</td>
+                </tr>
+              </tbody>
+          </table>
+    </div>
+
+</div>
+
+<div class="row" ng-if="!show">
+    <div class="col-md-4 col-xs-12 login-container">
+        <h3>Leaves Remaining <span class="label label-default">{{remainingLeaveDays}}</span></h3>
+    </div>
+    <div class="col-md-8 col-xs-12">
+        <md-content layout="column" layout-gt-sm="row"
+            layout-padding ng-cloak>
+          <div layout="column" flex-order="1" flex-order-gt-sm="0">
+            <md-subheader><h3>Start Date</h3></md-subheader>
+            <md-calendar md-min-date="minDate" ng-model="ctrl.startDate"></md-calendar>
+          </div>
+          <div layout="column" flex-order="1" flex-order-gt-sm="1">
+            <md-subheader><h3>End Date</h3></md-subheader>
+            <md-calendar md-min-date="minDate" ng-model="ctrl.endDate"></md-calendar>
+          </div>
+        </md-content>
+        <center>
+        <md-button ng-click="ctrl.submit()"class="md-raised md-primary">SUBMIT</md-button>
+    </center>
+    </div>
+</div>

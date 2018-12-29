@@ -1,0 +1,22 @@
+<div class="col-md-8 col-md-offset-2 col-xs-12">
+    <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">End Date</th>
+              <th scope="col">Approval Status</th>
+              <th scope="col">Approval Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="leave in allLeaveData" ng-init="Index = $index">
+              <th scope="row">{{Index}}</th>
+              <td>{{leave.start_date}}</td>
+              <td>{{leave.end_date}}</td>
+              <td>{{leave.status}}</td>
+              <td>{{leave.approved_date}}</td>
+            </tr>
+          </tbody>
+      </table>
+</div>
